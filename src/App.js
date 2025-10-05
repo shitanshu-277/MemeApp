@@ -6,15 +6,17 @@ import Team from './components/team';
 import Login from './components/login';
 import ProtectedRoute from './components/protectedroute';
 import Accordian from './components/accordian';
+import Comment from './components/comments/comments';
 
 function App() {
   return <div>
     <header className="text-2xl font-bold py-5 bg-black text-white text-center flex">
       Hello World
-      <nav className="px-20 m-2 w-[600px] flex justify-between text-lg">
+      <nav className="px-20 m-2 w-[800px] flex justify-between text-lg">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/accordian">Accordian</a>
+        <a href="/comments">Nested Comments</a>
         <a href="/team">Team</a>
         <a href="/login">Login</a>
       </nav>
@@ -24,6 +26,7 @@ function App() {
       <Route path="/" element={<Body/>}></Route>
       <Route element={<ProtectedRoute/>}>
       <Route path="/about" element={<About/>}></Route>
+      <Route path="/comments" element={<Comment/>}></Route>
       <Route path="/accordian" element={<Accordian/>}></Route>
       <Route path="/team" element={<Team/>}></Route>
       </Route>
